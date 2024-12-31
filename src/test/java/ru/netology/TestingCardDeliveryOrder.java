@@ -17,6 +17,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static java.time.Duration.ofSeconds;
 import static org.openqa.selenium.Keys.HOME;
 import static org.openqa.selenium.Keys.SHIFT;
+import static org.openqa.selenium.Keys.BACK_SPACE;
 
 
 class TestingCardDeliveryOrder {
@@ -41,33 +42,5 @@ class TestingCardDeliveryOrder {
         $("[data-test-id='notification']").should(Condition.visible, Duration.ofSeconds(16)).should(Condition.text("Успешно!" + " Встреча успешно забронирована на " + planningDate));
 
     }
-
-//    @Test
-//    void shouldChooseCityAndDateFromDropdown() {
-//        String deliveryDate = generateDate(8, "d");
-//        String deliveryMonth = generateDate(8, "MM");
-//        String deliveryFullDate = generateDate(8, "dd.MM.yyyy");
-//
-//        $("[data-test-id='city'] input").setValue("Мо");
-//        $$(".menu-item").findBy(Condition.text("Москва")).click();
-//
-//        $("[data-test-id='date'] input").sendKeys(Keys.chord(SHIFT, HOME), Keys.BACK_SPACE);
-//        $("span.input__box span button").click();
-//        //если дата в этом месяце, то
-//        if (deliveryMonth.equals(LocalDate.now().format(DateTimeFormatter.ofPattern("MM")))) {
-//            $$(".calendar__day").findBy(Condition.text(deliveryDate)).click();
-//        } else {
-//            //если дата в следующем месяце, то
-//            $(".calendar__arrow_direction_right[data-step='1'").click();
-//            $$(".calendar__day").findBy(Condition.text(deliveryDate)).click();
-//        }
-//        $("[data-test-id='name'] input").setValue("Санта Клаус");
-//        $("[data-test-id='phone'] input").setValue("+79208447566");
-//        $("[data-test-id='agreement']").click();
-//        $$("button").findBy(Condition.text("Забронировать")).click();
-//        $("[data-test-id='notification']").should(Condition.visible,
-//                Duration.ofSeconds(16)).should(Condition.text("Успешно!" +
-//                "Встреча успешно забронирована на" + deliveryFullDate));
-//    }
 
 }
